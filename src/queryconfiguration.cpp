@@ -1,6 +1,6 @@
 #include "queryconfiguration.h"
 #include "configurationparser.h"
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 #include <stdlib.h>
 #include <strings.h> /* strcasecmp */
 #include <sstream>

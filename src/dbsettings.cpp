@@ -1,6 +1,6 @@
-#include "hdbxsettings.h"
+#include "dbsettings.h"
 #include "configurationparser.h"
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 #include <stdlib.h>
 #include <strings.h> /* strcasecmp */
 #include <sstream>
@@ -40,12 +40,12 @@
  * The get method returns a string.
  *
  */
-HdbXSettings::HdbXSettings()
+DbSettings::DbSettings()
 {
 
 }
 
-HdbXSettings::~HdbXSettings() {
+DbSettings::~DbSettings() {
     mMap.clear();
 }
 
@@ -59,7 +59,7 @@ HdbXSettings::~HdbXSettings() {
  *
  * @see add
  */
-void HdbXSettings::loadFromFile(const char *filename)
+void DbSettings::loadFromFile(const char *filename)
 {
     m_errorStr = std::string();
     ConfigurationParser configParser;
@@ -79,12 +79,12 @@ void HdbXSettings::loadFromFile(const char *filename)
  * \par Note The value is passed as a const char. The get, getInt, getDouble...
  *  methods will then convert the values into the desired type, if possible.
  */
-void HdbXSettings::set(const char* key, const char *value)
+void DbSettings::set(const char* key, const char *value)
 {
     mMap[std::string(key)] = std::string(value);
 }
 
-void HdbXSettings::set(const char *key, const double d)
+void DbSettings::set(const char *key, const double d)
 {
     std::ostringstream os;
     try
@@ -92,13 +92,13 @@ void HdbXSettings::set(const char *key, const double d)
         os << d;
         mMap[std::string(key)] = os.str();
     }
-    catch(std::ios_base::failure)
+    catch(const std::ios_base::failure&)
     {
 
     }
 }
 
-void HdbXSettings::set(const char *key, const int i)
+void DbSettings::set(const char *key, const int i)
 {
     std::ostringstream os;
     try
@@ -106,13 +106,13 @@ void HdbXSettings::set(const char *key, const int i)
         os << i;
         mMap[std::string(key)] = os.str();
     }
-    catch(std::ios_base::failure)
+    catch(const std::ios_base::failure&)
     {
 
     }
 }
 
-void HdbXSettings::set(const char *key, bool b)
+void DbSettings::set(const char *key, bool b)
 {
     if(b)
         mMap[std::string(key)] = std::string("true");
@@ -131,7 +131,7 @@ void HdbXSettings::set(const char *key, bool b)
  * @see add
  * @see loadFromFile
  */
-bool HdbXSettings::hasKey(const char *key) const
+bool DbSettings::hasKey(const char *key) const
 {
     return mMap.count(std::string(key)) > 0;
 }
@@ -151,7 +151,7 @@ bool HdbXSettings::hasKey(const char *key) const
  *       check with hasKey before.
  *
  */
-long int HdbXSettings::getInt(const char *key, bool *ok) const
+long int DbSettings::getInt(const char *key, bool *ok) const
 {
     long int ret = 0;
     std::string val = mMap.at(key);
@@ -177,7 +177,7 @@ long int HdbXSettings::getInt(const char *key, bool *ok) const
  * @see getDouble
  * @see getBool
  */
-std::string HdbXSettings::get(const char *key) const
+std::string DbSettings::get(const char *key) const
 {
     if(mMap.count(key) > 0)
         return mMap.at(key);
@@ -188,7 +188,7 @@ std::string HdbXSettings::get(const char *key) const
  * \brief Shortcut to get the value of the *dbname* key
  * \return the database name, as std::string, stored in the *dbname* key
  */
-std::string HdbXSettings::dbName() const {
+std::string DbSettings::dbName() const {
     return get("dbname");
 }
 
@@ -202,7 +202,7 @@ std::string HdbXSettings::dbName() const {
  * @see getDouble
  * @see get
  */
-bool HdbXSettings::getBool(const char *key) const
+bool DbSettings::getBool(const char *key) const
 {
     if(mMap.count(key) > 0)
     {
@@ -227,7 +227,7 @@ bool HdbXSettings::getBool(const char *key) const
  *       check with hasKey before.
  *
  */
-double HdbXSettings::getDouble(const char* key, bool *ok) const
+double DbSettings::getDouble(const char* key, bool *ok) const
 {
     double ret = 0;
     std::string val = mMap.at(key);
@@ -247,11 +247,11 @@ double HdbXSettings::getDouble(const char* key, bool *ok) const
     return ret;
 }
 
-std::string HdbXSettings::getError() const
+std::string DbSettings::getError() const
 {
     return m_errorStr;
 }
 
-bool HdbXSettings::hasError() const {
+bool DbSettings::hasError() const {
     return m_errorStr.size() > 0;
 }

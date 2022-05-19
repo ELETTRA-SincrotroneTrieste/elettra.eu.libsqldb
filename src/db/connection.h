@@ -61,6 +61,14 @@ public:
      */
     virtual Result* query(const char *) = 0;
 
+
+    /*!
+     * \brief returns the number of rows affected by the operation (e.g. insert)
+     */
+    virtual int getAffectedRows()  = 0;
+
+    virtual int getLastInsertId() = 0;
+
 };
 
 #endif // CONNECTION_H

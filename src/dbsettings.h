@@ -4,12 +4,12 @@
 #include <map>
 #include <string>
 
-class HdbXSettings
+class DbSettings
 {
 public:
-    HdbXSettings();
+    DbSettings();
 
-    ~HdbXSettings();
+    ~DbSettings();
 
     void loadFromFile(const char *filename);
 

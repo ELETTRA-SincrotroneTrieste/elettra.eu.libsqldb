@@ -11,7 +11,7 @@ class Result;
 class XVariantList;
 class XVariant;
 class XErrorData;
-class HdbXSettings;
+class DbSettings;
 class TimeInterval;
 
 /** \brief The interface representing a database schema. <em>Used internally</em>.

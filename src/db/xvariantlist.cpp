@@ -1,5 +1,5 @@
 #include "xvariantlist.h"
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 
 XVariantList::XVariantList()
 {

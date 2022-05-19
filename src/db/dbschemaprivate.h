@@ -3,11 +3,11 @@
 
 #include <pthread.h>
 
-#define MAXERRORLEN 512
+#define MAXERRORLEN 8192
 
 class ResultListener;
 class XVariantList;
-class HdbXSettings;
+class DbSettings;
 
 class DbSchemaPrivate
 {
@@ -22,7 +22,7 @@ public:
 
     XVariantList *variantList;
 
-    HdbXSettings *hdbxSettings;
+    DbSettings *hdbxSettings;
 
     char errorMessage[MAXERRORLEN];
 

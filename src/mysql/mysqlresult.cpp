@@ -1,7 +1,7 @@
 #include "mysqlresult.h"
 #include "mysqlrow.h"
 #include <stdlib.h>
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 
 MySqlResult::MySqlResult(MYSQL_RES *mysqlResult) : Result()
 {

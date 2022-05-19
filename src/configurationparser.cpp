@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <string.h>
 #include <stdlib.h>
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 
 /** \brief The class constructor.
  *

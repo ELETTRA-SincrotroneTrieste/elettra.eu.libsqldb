@@ -1,11 +1,11 @@
 #include <stdlib.h> /* for NULL */
 #include <stdio.h>
 #include <string.h>
-#include "mysql/mysqlconnection.h"
+#include "mysqlconnection.h"
 #include "mysqlresult.h"
 #include "mysqlrow.h"
 #include "xvariant.h"
-#include "hdbxmacros.h"
+#include "dbmacros.h"
 
 #define MAXQUERYLEN 256
 
@@ -40,12 +40,11 @@ bool MySqlConnection::connect(const char* host,
     return (mConnection != NULL);
 }
 
-int MySqlConnection::getAffectedRows() const
-{
-    return mAffectedRows;
+int MySqlConnection::getAffectedRows()  {
+    return mysql_affected_rows(&mMysql);
 }
 
-int MySqlConnection::lastInsertId() {
+int MySqlConnection::getLastInsertId() {
     return mysql_insert_id(&mMysql);
 }
 

@@ -17,7 +17,7 @@ class XVariantList;
 class ResultListener
 {
 public:
-    ResultListener() {}
+    virtual ~ResultListener() {}
 
     /** \brief set the number of rows (in percentage) after which a progress update must be triggered on the listener.
      *

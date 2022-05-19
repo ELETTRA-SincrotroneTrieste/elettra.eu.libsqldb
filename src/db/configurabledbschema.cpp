@@ -25,7 +25,7 @@ ConfigurableDbSchema::ConfigurableDbSchema()
  * @param HdbXSettings a HdbXSettings object.
  *
  */
-void ConfigurableDbSchema::setHdbXSettings(HdbXSettings *HdbXSettings)
+void ConfigurableDbSchema::setHdbXSettings(DbSettings *HdbXSettings)
 {
     d_ptr->hdbxSettings = HdbXSettings;
 }

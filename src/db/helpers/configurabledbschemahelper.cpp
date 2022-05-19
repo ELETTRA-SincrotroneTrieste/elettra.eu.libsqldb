@@ -1,6 +1,6 @@
 #include "configurabledbschemahelper.h"
-#include "../../hdbxsettings.h"
-#include "../../hdbxmacros.h"
+#include "../../dbsettings.h"
+#include "../../dbmacros.h"
 
 #include <time.h>
 #include <string.h>
@@ -23,7 +23,7 @@ ConfigurableDbSchemaHelper::ConfigurableDbSchemaHelper()
  *  @return true A query to retrieve the first data from the past is required.
  *  @return false There is no need to get past data.
  */
-ConfigurableDbSchemaHelper::FillFromThePastMode ConfigurableDbSchemaHelper::fillFromThePastMode(const HdbXSettings* hdbXSettings,
+ConfigurableDbSchemaHelper::FillFromThePastMode ConfigurableDbSchemaHelper::fillFromThePastMode(const DbSettings* hdbXSettings,
                                                      const char *start_date,
                                                      const char *stop_date,
                                                      const char *first_value_date) const

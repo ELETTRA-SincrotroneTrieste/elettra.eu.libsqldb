@@ -6,7 +6,7 @@
 #include "../db/result.h"
 #include "../mysql/mysqlconnection.h"
 #include "../mysql/mysqlresult.h"
-#include "../hdbxmacros.h"
+#include "../dbmacros.h"
 #include "../dbschemaprivate.h" // for MAXERRORLEN
 
 bool MySqlUtils::query(const char *query,

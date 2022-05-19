@@ -7,7 +7,7 @@
 #include <math.h> /* round */
 #include <string.h> /* strerror */
 #include <stdexcept> /* std::invalid_argument */
-#include "../hdbxmacros.h"
+#include "../dbmacros.h"
 #include "datetimeutils.h"
 #include "xvariantprivate.h"
 #include "xvariantdatainfo.h"

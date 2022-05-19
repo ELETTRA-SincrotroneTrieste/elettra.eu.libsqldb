@@ -35,9 +35,9 @@ public:
 
     virtual void close();
 
-    int getAffectedRows() const;
+    int getAffectedRows();
 
-    int lastInsertId();
+    int getLastInsertId();
 
     Result *query(const char *);
 
