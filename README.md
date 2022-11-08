@@ -50,6 +50,6 @@ and, when building against *elettra.eu.libsqldb*, for example the [hdbextractor]
 
 - The [hdb extractor library](https://github.com/ELETTRA-SincrotroneTrieste/hdbextractor)
 - The [cumbia libraries](https://github.com/ELETTRA-SincrotroneTrieste/cumbia-libs)
-
+- The [cumbia hdb extractor plugin](https://github.com/ELETTRA-SincrotroneTrieste/cumbia-historicaldb)
 
 
