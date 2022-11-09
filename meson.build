@@ -73,9 +73,9 @@ includedirs = include_directories('src', 'src/mysql', 'src/utils', 'src/db/helpe
 # for perr, pinfo, etc
 cpp_arguments = [ '-DELETTRA_EU_LIBSQLDB_PRINTINFO=1' ]
 
-deps = [ dependency('mariadb') ]
+deps = [ dependency('mysqlclient') ]
 
-libsqldblib = shared_library('elettra.eu.sqldb', sources,
+libsqldblib = shared_library('libsqldb', sources,
         version : meson.project_version(),
         include_directories : includedirs,
         cpp_args : cpp_arguments,
@@ -95,9 +95,9 @@ pkgg.generate(
     libraries : libsqldblib,
     subdirs : h,
     version : meson.project_version(),
-    name : 'liblibsqldb',
+    name : 'libsqldb',
     filebase : 'libsqldb',
-    requires: ['mariadb'],
+    requires: ['mysqlclient'],
     description : project_description )
 
 

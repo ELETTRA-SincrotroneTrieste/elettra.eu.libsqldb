@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 #define perr(...) do {  fprintf(stderr, "\033[1;31m!! \033[0;4merror\033[0m: "); printf(__VA_ARGS__); printf("\n"); }while(0)
 #define stoc(x) x.c_str()

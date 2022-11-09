@@ -24,6 +24,7 @@ void XVariantPrinter::print(const XVariant &xv, int maxVectorElements)
             printf("%.3f, ", values.at(j));
         }
         printf(" \e[1;33m]\e[0m\n");
+
     }
     else
         printf("\e[1;31m format %d unrecognized data type %d\e[0m\n", format, xv.getType());
