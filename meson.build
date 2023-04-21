@@ -75,7 +75,7 @@ cpp_arguments = [ '-DELETTRA_EU_LIBSQLDB_PRINTINFO=1' ]
 
 deps = [ dependency('mysqlclient') ]
 
-libsqldblib = shared_library('libsqldb', sources,
+libsqldblib = shared_library('sqldb', sources,
         version : meson.project_version(),
         include_directories : includedirs,
         cpp_args : cpp_arguments,
